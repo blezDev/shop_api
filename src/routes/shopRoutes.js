@@ -5,15 +5,15 @@ const {  createItemCart,updateItemCart,deleteItemCart,getCartItems,deleteAllCart
 const auth = require("../middleware/auth.js");
 const shopRouter = express.Router();
 
-shopRouter.post("/cartItems",auth,getCartItems);
-shopRouter.post("/createCart",auth,createItemCart);
-shopRouter.post("/deleteCartItem",auth,deleteItemCart);
-shopRouter.post("/deleteAllCart",auth,deleteAllCartItems);
-shopRouter.post("/updateCart",auth,updateItemCart);
+shopRouter.post("/cartItems",getCartItems);
+shopRouter.post("/createCart",createItemCart);
+shopRouter.post("/deleteCartItem",deleteItemCart);
+shopRouter.post("/deleteAllCart",deleteAllCartItems);
+shopRouter.post("/updateCart",updateItemCart);
 
 
 shopRouter.get("/items",getItems);
-shopRouter.post("/createItem",auth,createItem);
+shopRouter.post("/createItem",createItem);
 
 
 module.exports = shopRouter;
