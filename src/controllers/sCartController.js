@@ -20,12 +20,12 @@ const createItemCart = async (req,res)=>{
            var item = await sItemCartModel.findByIdAndUpdate({_id : _id._id},{$set : {pCount : (parseInt(_id.pCount)+1).toString()}});
            item
          
-            res.status(200).json({message:"Object exists",item});
+            res.status(201).json({message:"Object exists",item});
         }else
         {
            
             await newItem.save();
-            res.status(200).json(newItem);
+            res.status(200).json({message : "Item added"});
         }
 
       

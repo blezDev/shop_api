@@ -12,7 +12,7 @@ shopRouter.post("/deleteAllCart",auth,deleteAllCartItems);
 shopRouter.post("/updateCart",auth,updateItemCart);
 
 
-shopRouter.get("/items",auth,getItems);
+shopRouter.get("/items",getItems);
 shopRouter.post("/createItem",auth,createItem);
 
 
