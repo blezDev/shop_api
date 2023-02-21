@@ -63,9 +63,23 @@ const getItems = async (req,res)=>{
         res.status(500).json({message: "Something went wrong"});
     }
 }
+
+const selectItem = async (req,res)=>{
+    const {pName} = req.body;
+    try{
+        const item = await sItemModel.findOne({pName:pName});
+        item;
+        res.status(200).json(item);
+
+    }catch(error){
+        console.log(error);
+        res.status(500).json({message: "Something went wrong"});
+    }
+}
 module.exports = {
     createItem,
     updateItem,
     deleteItem,
-    getItems
+    getItems,
+    selectItem
 }

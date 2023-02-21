@@ -95,11 +95,13 @@ const deleteAllCartItems = async (req,res)=>{
     }
 }
 
+
 module.exports = {
     createItemCart,
     updateItemCart,
     deleteItemCart,
     getCartItems,
-    deleteAllCartItems
+    deleteAllCartItems,
+    
 }
 
